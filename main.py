@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+import os
 
-BOT_TOKEN = '7561185471:AAFHaV3uklwtoCvm767v-mzld4WH4Og-Kpg'
+BOT_TOKEN = os.getenv("BOT_TOKEN")  # گرفتن توکن از Railway
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("سلام! ربات شما آماده است 🌱")
